@@ -1,19 +1,5 @@
 import React from 'react';
 
-// function header() {
-//   const [sbheader, setSbheader] = useState()
-
-//   return (
-//     <header className="header">
-//       <h1>Demo Streaming</h1>
-//       <ul>
-//         <li><a>Log in</a></li>
-//         <li><a>Start your free trial</a></li>
-//       </ul>
-//       <div className="sub-header" ></div>
-//     </header>
-//   )
-// };
 
 const Header = () => (
   <>

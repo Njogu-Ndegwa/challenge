@@ -1,3 +1,6 @@
+$primary-color: #ffffff;
+$header-color: #0081ff;
+
 body {
     font: 15px/1.5 Helvetica, Arial, sans-serif;
     margin: 0;
@@ -20,7 +23,7 @@ ul {
 
 .btn{
     display: inline-block;
-    background: grey;
+    background: #414141;
     padding: 0.4em 0.8em;
     font-size: 16px;
     color: #fff;
@@ -37,13 +40,13 @@ ul {
     margin-bottom: 10px;
     padding: 15px;
     color: #ffffff;
-    background-color: #2d2a32;
+    background-color: #414141;
 }
 
 /* Header */
 
 header {
-    background:blue;
+    background: $header-color;
     color: #ffffff;
     padding-top: 10px;
     min-height: 60px;
@@ -82,7 +85,7 @@ header a:hover {
 }
 
 #sub-header {
-    background: grey;
+    background: #414141;
     color: white;
     font-weight: bold;
     font-size: 1.6rem;
@@ -124,7 +127,7 @@ img {
     width: 200px;
     height: 300px;
     margin-top: 50px;
-    background-color: black;
+    background-color:#1e1e1e;
     position: relative ;
     margin-right: 20px;
 }
@@ -152,7 +155,7 @@ img {
 /* footer */
 
 footer {
-    background-color: black;
+    background-color: #1e1e1e;
     color: white;
 }
 
@@ -237,4 +240,3 @@ header #branding {
     float: none;
 }
 }
-

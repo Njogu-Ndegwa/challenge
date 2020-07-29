@@ -1,10 +1,12 @@
 
-import React, { useState, use, useEffect } from 'react';
-import axios from 'axios';
-import Header from '../components/header';
-import Footer from '../components/footer';
+import React, { useState, useEffect } from 'react';
 import Loading from '../components/loading';
 import Error from '../components/error';
+import { fetchMovies } from "../API";
+import dynamicSort from '../utils';
+import Layout from '../components/layout';
+
+
 export default function Movies() {
   const [data, setData] = useState([])
   const [loading, setLoading] = useState(true);
@@ -12,69 +14,33 @@ export default function Movies() {
 
   useEffect(() => {
     const fetchData = async () => {
-      try{
-      const result = await axios(
-        'https://raw.githubusercontent.com/StreamCo/react-coding-challenge/master/feed/sample.json',
-      ); 
-     
-      console.log('result', result)
-      if (result.data) {
-        let result1 = result.data.entries.map((data) => {
-          if (data.releaseYear > 2010 && data.programType != 'series') {
-            return data;
-          }
-        })
-        result1 = result1.filter(item => item != undefined);
-        result1.sort(dynamicSort("title"));
-        result1 = result1.slice(0, 21)
-        setData(result1);
-        setLoading(false)
-      }
-    } catch (error) {
-      console.log(error)
-      setLoading(false)
-      setError(true)
-    }
+      fetchMovies().then(result => result.sort(dynamicSort('title')))
+        .then(result => result.slice(0, 21))
+        .then(result => setData(result), setLoading(false), setError(false))
+        .catch(error => setError(true))
 
     };
 
     fetchData();
   }, []);
 
+  console.log(error)
+  console.log(loading)
 
-  function dynamicSort(property) {
-    var sortOrder = 1;
-
-    if (property[0] === "-") {
-      sortOrder = -1;
-      property = property.substr(1);
-    }
-
-    return function (a, b) {
-      if (sortOrder == -1) {
-        return b[property].localeCompare(a[property]);
-      } else {
-        return a[property].localeCompare(b[property]);
-      }
-    }
-  }
+const contents = (
+    <div className="container">
+      <ul className='movies' >
+        {data.map(item => (
+          <li key={item.objectID}>
+            <img src={item.images['Poster Art'].url} alt="movie"  />
+            {item.title}
+          </li>
+        ))}
+      </ul>
+    </div> 
+)
 
   return (
-    <>
-      <Header />
-      {loading? <Loading/> : ''}
-      {error? <Error/> : '' }
-      <div className="container">
-        <ul className='movies' >
-          {data.map(item => (
-            <li key={item.objectID}>
-              <img src={item.images['Poster Art'].url} />
-              {item.title}
-            </li>
-          ))}
-        </ul>
-      </div>
-      <Footer />
-    </>
+    <Layout content={contents} loading={loading} error={error}  />
   )
 }

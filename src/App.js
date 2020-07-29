@@ -1,6 +1,5 @@
 import React from 'react';
-import Home from './screens/Home';
-import './styles.css';
+import './styles.scss';
 import Routes from './routes'
 
 function App() {
