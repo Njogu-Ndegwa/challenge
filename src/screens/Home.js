@@ -4,7 +4,7 @@ import Layout from '../components/layout';
 
 const Home = () => (
 
-    <Layout content={<Content/>} />
+    <Layout content={<Content/>} title={'Titles'} />
 
 )
 

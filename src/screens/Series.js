@@ -36,6 +36,6 @@ const contents = (
 )
 
   return (
-    <Layout content={contents} loading={loading} error={error} />
+    <Layout content={contents} loading={loading} error={error} title={'Series'} />
   )
 }

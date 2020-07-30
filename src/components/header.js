@@ -1,7 +1,7 @@
 import React from 'react';
 
 
-const Header = () => (
+const Header = ({titles}) => (
   <>
     <header>
         <div className="container">
@@ -18,7 +18,7 @@ const Header = () => (
     </header>
     <section id="sub-header" >
     <div className="container" >
-          <p>Popular Titles</p>
+          <p>Popular {titles} </p>
         </div>
     </section>
 </>

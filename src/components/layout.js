@@ -4,10 +4,10 @@ import Footer from './footer';
 import Loading from './loading';
 import Error from './error';
 
-export default function Layout ({content, loading, error}) {
+export default function Layout ({content, loading, error, title}) {
     return (
         <>
-        <Header />
+        <Header titles={title} />
         {error ? <Error/> : ''}
         {loading? <Loading /> : ''}
         {content}
