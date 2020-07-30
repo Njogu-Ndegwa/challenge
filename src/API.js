@@ -1,3 +1,4 @@
+
 import Axios from "axios";
 
 export const fetchMovies = async () => {
@@ -8,9 +9,9 @@ export const fetchMovies = async () => {
     const filter =  async () => {
        return result.data.entries.map((movie) => {
             if (movie.releaseYear > 2010 && movie.programType !== 'series') {
-               return movie
+               return movie;
             }
-            return movie
+            
         });
     }
 
@@ -26,9 +27,9 @@ export const fetchSeries = async () => {
   const filter =  async () => {
      return result.data.entries.map((series) => {
           if (series.releaseYear > 2010 && series.programType !== 'movie') {
-             return series
+             return series;
           }
-          return series
+         
       });
   }
 
