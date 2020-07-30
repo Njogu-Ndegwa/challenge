@@ -10,7 +10,7 @@ export const fetchMovies = async () => {
             if (movie.releaseYear > 2010 && movie.programType !== 'series') {
                return movie
             }
-            
+            return movie
         });
     }
 
@@ -28,7 +28,7 @@ export const fetchSeries = async () => {
           if (series.releaseYear > 2010 && series.programType !== 'movie') {
              return series
           }
-          
+          return series
       });
   }
 

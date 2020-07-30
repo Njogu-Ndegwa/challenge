@@ -1,7 +1,5 @@
 
 import React, { useState, useEffect } from 'react';
-import Loading from '../components/loading';
-import Error from '../components/error';
 import { fetchMovies } from "../API";
 import dynamicSort from '../utils';
 import Layout from '../components/layout';

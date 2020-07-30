@@ -10,8 +10,8 @@ const Header = () => (
             </div>
             <nav>
                 <ul>
-                    <li><a href="#">Log in</a></li>
-                    <li> <a className="btn" href="about.html">Start your free Trial</a></li>
+                    <li><button href="#">Log in</button></li>
+                    <li> <button className="btn" href="about.html">Start your free Trial</button></li>
                 </ul>
             </nav>
         </div>
