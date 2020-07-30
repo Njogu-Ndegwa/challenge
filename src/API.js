@@ -1,4 +1,4 @@
-
+/* eslint-disable */
 import Axios from "axios";
 
 export const fetchMovies = async () => {
